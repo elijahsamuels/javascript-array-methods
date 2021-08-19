@@ -1,14 +1,5 @@
 /*
 
-.includes()
-// Determines whether the array contains a value, returning true or false as appropriate.
-
-.every()
-// Returns true if every element in this array satisfies the testing function.
-
-.some()
-// Returns true if at least one element in this array satisfies the provided testing function.
-
 .concat()
 // Returns a new array that is this array joined with other array(s) and/or value(s).
 
@@ -20,58 +11,47 @@
 
 */
 
-let testArray1 = [1, 2, 3, 4, 5];
-let testArray2 = ["six", "seven", "eight", "nine", "ten"];
+const testArray1 = [1, 2, 3, 4, 5, 6];
+const testArray2 = ["six", "seven", "eight", "nine", "ten", "a", "b", "c", "d"];
 
-// INCLUDES
+let testArray3 = testArray1.concat(testArray2) 
+// [ 1, 2, 3, 4, 5, 6, 'six', 'seven', 'eight', 'nine', 'ten', 'a', 'b', 'c', 'd' ]
 
-testArray1.includes(1) // true
-testArray1.includes(0) // false
-testArray1.includes("1") // false
-testArray1.includes(1+1) // true
-testArray1.includes(5-2) // true
-testArray1.includes(parseInt("1")) // true
-testArray1.includes(parseInt("1+1")) // true
-testArray1.includes(+"1") // true
+console.log(testArray1) 
+// [ 1, 2, 3, 4, 5, 6 ]
 
-testArray2.includes("six") // true
-testArray2.includes("Six") // false
-testArray2.includes(String.fromCharCode(115, 105, 120)) // true
+console.log(testArray2) 
+// [ 'six', 'seven', 'eight', 'nine', 'ten', 'a', 'b', 'c', 'd' ]
 
-// EVERY
+console.log(testArray3) 
+// [ 1, 2, 3, 4, 5, 6, 'six', 'seven', 'eight', 'nine', 'ten', 'a', 'b', 'c', 'd' ]
 
-testArray1.every(element => {return element > 0}) // true
-testArray1.every(element => {return element > 1}) // false
-testArray1.every(element => {return element >= 1}) // true
-testArray1.every(element => {return typeof element === 'number' }) // true
-
-testArray2.every(element => {return typeof element === 'number' }) // false
-testArray2.every(element => {return typeof element === 'string' }) // true
-
-let testArray3 = testArray1.concat(testArray2) // [ 1, 2, 3, 4, 5, 'six', 'seven', 'eight', 'nine', 'ten' ]
-let testArray4 = [...testArray1, ...testArray2] // [ 1, 2, 3, 4, 5, 'six', 'seven', 'eight', 'nine', 'ten' ]
-
-testArray3.every(element => {return typeof element === 'string' }) // false
-testArray3.every(element => {return typeof element === 'number' }) // false
-testArray3.every(element => {return typeof element === 'string' || 'number' }) // true
+testArray3 = []
+console.log(testArray3) // []
 
 
-// SOME
+console.log([1,2,3].join('a')) // "1a2a3"
 
-testArray1.some(element => {return element > 0}) // true
-testArray1.some(element => {return element > 1}) // true
-testArray1.some(element => {return element >= 1}) // true
-testArray1.some(element => {return typeof element === 'number' }) // true
+testString3 = testArray1.join(" abc ")
+console.log(testString3) // "1 abc 2 abc 3 abc 4 abc 5 abc 6"
+console.log(typeof testString3) // string
 
-testArray2.some(element => {return typeof element === 'number' }) // false
-testArray2.some(element => {return typeof element === 'string' }) // true
+
+// .reverse()
+// Reverses the order of the elements of an array in place. (First becomes the last, last becomes first.)
+
+testArray1 // [ 1, 2, 3, 4, 5, 6 ]
+testArray1.reverse() // [ 6, 5, 4, 3, 2, 1 ]
+testArray2.reverse() // [ 'd', 'c', 'b', 'a', 'ten', 'nine', 'eight', 'seven', 'six' ]
+testArray1 // [ 6, 5, 4, 3, 2, 1 ]
 
 
 
+// .find()
+// The find() method returns the value of the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
 
+let item3 = testArray1.find(element => element === 3)
+console.log(item3)
 
-
-
-console.log(testArray1)
-console.log(testArray2)
-console.log(testArray3)
+let foundItem = testArray1.find(element => {return (element < 3 && element !== 2)})
+console.log(foundItem)

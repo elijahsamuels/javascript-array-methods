@@ -88,7 +88,6 @@ console.log(testArray); // [0, 1, 2, 3]
 testArray.slice(1, 3); // [1, 2]
 console.log(testArray); // [0, 1, 2, 3]
 
-
 // Accessing values
 // Arrays are built starting at the zeroth item, meaning the first item in the array has an index value of 0
 
@@ -101,10 +100,7 @@ testArray2[testArray2.length - 1] // 'four'
 
 testArray2[testArray2.length - 1] === testArray2[4] // true
 
-
 let numbersList = [1,2, ...testArray2]
 numbersList
+
 // let numbersList = [...testArray2]
-
-
-
